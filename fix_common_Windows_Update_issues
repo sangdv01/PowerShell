@@ -1,0 +1,12 @@
+#Stop BITS, Cryptographic, MSI Installer and Windows Update Services. To do this, typethe following commands: 
+Net stop wuauserv
+Net stop cryptSvc
+Net stop bits
+Net stop msiserver
+Ren C:\Windows\SoftwareDistribution SoftwareDistribution.old
+Ren C:\Windows\System32\catroot2 Catroot2.old
+Net start wuauserv
+Net start cryptSvc
+Net start bits
+Net start msiserver
+#Restart your computer and try to install Windows Update.
